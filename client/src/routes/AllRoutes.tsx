@@ -4,11 +4,10 @@ import ContactList from "../components/ContactList";
 import ContactDetails from "../components/ContactDetails";
 import ContactForm from "../components/ContactForm";
 import MapChart from "../components/MapChart";
- 
 
 const AllRoutes = () => {
   return (
-      <main >
+      <main>
         <Routes>
           <Route path="/" element={<ContactList />} />
           <Route path="/contact/:id" element={<ContactDetails />} />
