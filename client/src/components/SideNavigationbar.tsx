@@ -18,7 +18,12 @@ const SideNavigationbar = () => {
       </li>
       <li>
         <Link to="/mapchart" className="flex items-center hover:underline">
-          <AiOutlineGlobal className="mr-2" /> Map & Chart
+          <AiOutlineGlobal className="mr-2" /> Map  
+        </Link>
+      </li>
+      <li>
+        <Link to="/chart" className="flex items-center hover:underline">
+          <AiOutlineGlobal className="mr-2" />Charts Data
         </Link>
       </li>
     </ul>

@@ -1,11 +1,15 @@
 import React , { useState } from "react";
+import { useDispatch } from "react-redux";
+import { AddContact, Contact } from "../redux/contactReducer/actions";
+import { Dispatch } from "redux";
 
+ 
 const ContactForm = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [isActive, setIsActive] = useState(true);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-
+    const dispatch : Dispatch<any>  =useDispatch()
     const openPopup = () => {
       setIsPopupOpen(true);
     };
@@ -15,7 +19,15 @@ const ContactForm = () => {
     };
 
     const  handleSubmit=()=>{
-       alert(`${firstName} ${ lastName}  ${isActive} done`);
+    //    alert(`${firstName} ${ lastName}  ${isActive} done`);
+       const newContact: Contact = {
+        id : Date.now(),
+        firstName ,
+        lastName ,
+        active: isActive ,
+      };
+    
+      dispatch(AddContact(newContact));
     }
 
  
